@@ -1,0 +1,221 @@
+
+
+
+
+Network Working Group                                       L. Johansson
+Internet-Draft                                          SIROS Foundation
+Intended status: Informational                          27 November 2025
+Expires: 31 May 2026
+
+
+                  Use cases for Zero Knowledge Proofs
+                  draft-johansson-zkp-usecases-latest
+
+Abstract
+
+   Zero Knowledge Proof technology relies on mathematical constructs
+   that enable a sender to proove to a receiver that a piece of
+   information has a certain agreed property without revealing that
+   information or its source to the sender.  An example commonly given
+   is the problem of prooving that a subject is older than a certain age
+   without revealing the exact age or any other information to a
+   receiver.  This document attempts to catalogue real world usecases
+   for such technology.
+
+About This Document
+
+   This note is to be removed before publishing as an RFC.
+
+   The latest revision of this draft can be found at
+   https://leifj.github.io/draft-johansson-zkp-usecases/draft-johansson-
+   zkp-usecases.html.  Status information for this document may be found
+   at https://datatracker.ietf.org/doc/draft-johansson-zkp-usecases/.
+
+   Source for this draft and an issue tracker can be found at
+   https://github.com/leifj/draft-johansson-zkp-usecases.
+
+Status of This Memo
+
+   This Internet-Draft is submitted in full conformance with the
+   provisions of BCP 78 and BCP 79.
+
+   Internet-Drafts are working documents of the Internet Engineering
+   Task Force (IETF).  Note that other groups may also distribute
+   working documents as Internet-Drafts.  The list of current Internet-
+   Drafts is at https://datatracker.ietf.org/drafts/current/.
+
+   Internet-Drafts are draft documents valid for a maximum of six months
+   and may be updated, replaced, or obsoleted by other documents at any
+   time.  It is inappropriate to use Internet-Drafts as reference
+   material or to cite them other than as "work in progress."
+
+   This Internet-Draft will expire on 31 May 2026.
+
+Copyright Notice
+
+   Copyright (c) 2025 IETF Trust and the persons identified as the
+   document authors.  All rights reserved.
+
+   This document is subject to BCP 78 and the IETF Trust's Legal
+   Provisions Relating to IETF Documents (https://trustee.ietf.org/
+   license-info) in effect on the date of publication of this document.
+   Please review these documents carefully, as they describe your rights
+   and restrictions with respect to this document.  Code Components
+   extracted from this document must include Revised BSD License text as
+   described in Section 4.e of the Trust Legal Provisions and are
+   provided without warranty as described in the Revised BSD License.
+
+Table of Contents
+
+   1.  Introduction
+   2.  Conventions and Definitions
+   3.  Why deploy zkp?
+     3.1.  Regulatory requirements
+     3.2.  Business requirements
+     3.3.  Cross-realm trust
+   4.  Use cases
+     4.1.  Proof of age
+     4.2.  Proof of human
+     4.3.  Proof of liveness
+     4.4.  Proof of membership
+     4.5.  Revocation
+   5.  Security Considerations
+   6.  IANA Considerations
+   7.  Normative References
+   Acknowledgments
+   Author's Address
+
+1.  Introduction
+
+   There are several ways to define the concept of zero knowledge
+   proofs.  In this document we will rely on the SPICE architecture
+   document to provide us with the basic terminology and use the
+   following definition: A zero knowledge proof (zkp) is a mechanism by
+   which the holder can proove to the verifier that a statement (S) is
+   true without providing the verifier with any additional information
+   other than the truthfullness of S.  A zkp mechanism is usually
+   required to satisfy three properties:
+
+   *  completeness: if S is true then a compliant implementation of the
+      mechanism will accept the proof presented by a another compliant
+      implementation.
+
+   *  soundness: a non-compliant holder can't make a compliant
+      implementation accept that S is true when it is in fact false.
+
+   *  zero knowledge: if S is true then a verifier is not able to derive
+      any other information than the fact that S is true from the
+      mechanism.
+
+   Zero knowledge mechanisms fulfil many privacy requirements for
+   instance:
+
+   *  holder-verifier unlinkability
+
+   *  issuer-verifier unlinkability (aka collusion-resistant
+      unlinkability)
+
+   These properites come at a cost and zero knowledge proofs are both
+   different from conventional cryptography aswell as often hard to
+   implement and understand.  Additionally, the fact that zkp ensures
+   unlinkability means that some use-cases that depend on linkability
+   may not translate into architectures that rely on zkp.  This means
+   that even if zkp is deployed, the information present in the proofs
+   (ie the statement S) may in some cases be enough to fully identify
+   the data subject in which case the deployment of zkp serves little
+   purpouse.
+
+   This document aims to describe some real-world usecases where the
+   deployment of zkp makes sens from a business and technical
+   perspective.
+
+2.  Conventions and Definitions
+
+   The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+   "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and
+   "OPTIONAL" in this document are to be interpreted as described in
+   BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all
+   capitals, as shown here.
+
+   We also rely on the terminilogy from the SPICE architecture document.
+
+3.  Why deploy zkp?
+
+   Zero Knownledge Proof mechanisms are fundamentally about proving
+   claims about data subjects with no (zero) auxilliary information
+   leakage.  However zkp isn't the only method for addressing
+   information leakage in the 3 party architecture.  Using [RFC9901],
+   aka selective disclosure json web tokens (SD-JWT) it is possible to
+   achive many but not all common privacy requirements.  Specifically it
+   is not possible to prevent information leakage that results from the
+   issuer and verfier colluding.
+
+   In situations where collusion resistance is needed and SD-JWTs (and
+   similar solutions) don't work zkp becomes a clear alternative.
+   However even in situations where collusion resistance isn't
+   necessary, zkp is sometimes a convenient alternative to other
+   selective disclosure solutions for operational reasons.  For
+   instance, a common way to deploy SD-JWTs is to use so called batch
+   issuance.  In order to achive holder-verifier unlinkability, the
+   issuer provides the holder with a set of identical copies (a batch)
+   of a given SD-JWT each signed with a unique key.  Whenever the holder
+   generates a presentation to the verifier one of the SD-JWTs is
+   "consumed", making them effectively one-time-use.
+
+   There are many situations where this provides adequate privacy
+   protection.  However, since the issuer creates N copies and N
+   signatures each time a SD-JWT is issued and since this has to be
+   repeated every time the batch "runs dry" at the holder, the issuer
+   has to perform a large and recurring number of signatures.  Depending
+   on how the infrastructure is setup, it may simply be cheaper from an
+   operational point of view to use a zkp mechanism where a single
+   credential can be issued and re-used by the holder for as long as it
+   is valid.
+
+3.1.  Regulatory requirements
+
+3.2.  Business requirements
+
+3.3.  Cross-realm trust
+
+4.  Use cases
+
+4.1.  Proof of age
+
+4.2.  Proof of human
+
+4.3.  Proof of liveness
+
+4.4.  Proof of membership
+
+4.5.  Revocation
+
+5.  Security Considerations
+
+   This document does not specify any protocols or interoperability
+   requirements.
+
+6.  IANA Considerations
+
+   This document has no IANA actions.
+
+7.  Normative References
+
+   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
+              Requirement Levels", BCP 14, RFC 2119,
+              DOI 10.17487/RFC2119, March 1997,
+              <https://www.rfc-editor.org/rfc/rfc2119>.
+
+   [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
+              2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
+              May 2017, <https://www.rfc-editor.org/rfc/rfc8174>.
+
+Acknowledgments
+
+   Peter Altman Drummond Reed
+
+Author's Address
+
+   Leif Johansson
+   SIROS Foundation
+   Email: leifj@siros.org
