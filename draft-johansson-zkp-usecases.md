@@ -9,18 +9,18 @@ number:
 date:
 consensus: true
 v: 3
-area: SEC
-#workgroup: WG Working Group
+# area: SEC
+# workgroup: WG Working Group
 keyword:
  - zero knowledge proof
  - use cases
 venue:
-  group: 
-  type: Mailing List
-  mail: zip@ietf.org
+#  group:
+#  type: Mailing List
+#  mail: zip@ietf.org
 #  arch: https://example.com/WG
-  github: leifj/draft-johansson-zkp-usecases
-#  latest: https://example.com/LATEST
+  github: "leifj/draft-johansson-zkp-usecases"
+  latest: "https://leifj.github.io/draft-johansson-zkp-usecases/draft-johansson-zkp-usecases.html"
 
 author:
  -
