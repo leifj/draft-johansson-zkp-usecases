@@ -19,35 +19,34 @@
 # Change the file extension to match the format (.xml for XML, etc...)
 #
 ###
-title: "TODO - Your title"
-abbrev: "TODO - Abbreviation"
+title: "Use cases for Zero Knowledge Proofs"
+abbrev: "zkpusecases"
 category: info
 
-docname: draft-todo-yourname-protocol-latest
+docname: draft-johansson-zkp-usecases
 submissiontype: IETF  # also: "independent", "editorial", "IAB", or "IRTF"
 number:
 date:
 consensus: true
 v: 3
-area: AREA
-workgroup: WG Working Group
+area: SEC
+#workgroup: WG Working Group
 keyword:
- - next generation
- - unicorn
- - sparkling distributed ledger
+ - zero knowledge proof
+ - use cases
 venue:
-  group: WG
-  type: Working Group
-  mail: WG@example.com
-  arch: https://example.com/WG
-  github: USER/REPO
-  latest: https://example.com/LATEST
+  group: 
+  type: Mailing List
+  mail: zip@ietf.org
+#  arch: https://example.com/WG
+  github: leifj/draft-johansson-zkp-usecases
+#  latest: https://example.com/LATEST
 
 author:
  -
-    fullname: Your Name Here
-    organization: Your Organization Here
-    email: your.email@example.com
+    fullname: Leif Johansson
+    organization: SIROS Foundation
+    email: leifj@siros.org
 
 normative:
 
