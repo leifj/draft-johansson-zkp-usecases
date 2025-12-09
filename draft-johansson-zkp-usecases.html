@@ -1164,9 +1164,6 @@ svg :is([fill="white"], [fill^="#fff"]) {
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.4">
                 <p id="section-toc.1-1.4.2.4.1"><a href="#section-4.4" class="auto internal xref">4.4</a>.  <a href="#name-proof-of-membership" class="internal xref">Proof of membership</a></p>
 </li>
-              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.5">
-                <p id="section-toc.1-1.4.2.5.1"><a href="#section-4.5" class="auto internal xref">4.5</a>.  <a href="#name-revocation" class="internal xref">Revocation</a></p>
-</li>
             </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5">
@@ -1269,28 +1266,24 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
 <a href="#section-4.2" class="section-number selfRef">4.2. </a><a href="#name-proof-of-human" class="section-name selfRef">Proof of human</a>
         </h3>
 <p id="section-4.2-1">Proof of human means the ability to proove that a subject is human. This could be achived by producing a zkp proof from a credential only given to humans. It is often presumed that a passport or similar travel document, or the Personal Identity Document (PID) credentials envisioned by the eIDAS regulation will only be provided to humans but it is by no means certain that all countries and organizations that issue recognized ICAO travel documents would only issue them to persons (humans). ICAO guidelines make no explicit requirement that only humans are allowed to obtain a passport or an emergency travel document but the term "person" indicates that this is the intent.<a href="#section-4.2-1" class="pilcrow">¶</a></p>
-<p id="section-4.2-2">The reason proof of human may be interesting follows from the increased use of semi-autonomous agents that sometimes acts independently from or by loosely formulated instructions (prompts) from human owners. It is likely going to be useful to distinguish operations done by a human from operations done as the result of a prompt from decisions taken independently from any human interaction. Such acts and operations are sometimes but not always recorded together with identifiable information and the use of zkp allows the trust in the "human:ness" to be seperated from any trust in the agent holding the authorzation for the act itself.<a href="#section-4.2-2" class="pilcrow">¶</a></p>
+<p id="section-4.2-2">The reason proof of human may be interesting follows from the increased use of semi-autonomous agents that sometimes acts independently from, or on loosely formulated instructions (prompts) from a human. It may be useful to distinguish actions taken by a human from actions taken by an agent as the result of a prompt and also from actions taken independently from any human interaction. Such actions are sometimes, but not always recorded together with identifiable information and the use of zkp allows the trust in the "human:ness" to be seperated from any trust in the agent holding the authorzation for the act itself.<a href="#section-4.2-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="proof-of-liveness">
 <section id="section-4.3">
         <h3 id="name-proof-of-liveness">
 <a href="#section-4.3" class="section-number selfRef">4.3. </a><a href="#name-proof-of-liveness" class="section-name selfRef">Proof of liveness</a>
-      </h3>
+        </h3>
+<p id="section-4.3-1">In the 3 party model a credential is issued to a digital "wallet" under the control of the subject. Cryptographic controls - aka holder binding - is used to ensure that a given credential is issued to one specific wallet. Cryptographic binding cannot however ensure that the subject is the only one able to control the wallet and it is sometimes necessary to know that a particular subject is in direct control of the wallet device. This is sometimes called liveness checks and is commonly used when issuing credentials based on travel documents, drivers licenses and other documents that carry some form of biometric data that can be matched with a subject. Liveness checks are carried out in order to ensure (to some degree) that the subject is physically present instead of (say) having their actions emulated by software.<a href="#section-4.3-1" class="pilcrow">¶</a></p>
+<p id="section-4.3-2">A liveness credential is a representation of a recent liveness check and the use of zkp enables a verifier to have confidence in that a trusted liveness verification has been done without providing any additional information. It would be possible to combine the liveness check with an identity verification in the holder to be able to proove that the same individual holding an particular form of identity document (say a PID) was recently present and in control of the holder device.<a href="#section-4.3-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="proof-of-membership">
 <section id="section-4.4">
         <h3 id="name-proof-of-membership">
 <a href="#section-4.4" class="section-number selfRef">4.4. </a><a href="#name-proof-of-membership" class="section-name selfRef">Proof of membership</a>
-      </h3>
-</section>
-</div>
-<div id="revocation">
-<section id="section-4.5">
-        <h3 id="name-revocation">
-<a href="#section-4.5" class="section-number selfRef">4.5. </a><a href="#name-revocation" class="section-name selfRef">Revocation</a>
-      </h3>
+        </h3>
+<p id="section-4.4-1">Many relationships can be represented as membership in a group; a subject is a student if they are a member of the group of students (at a particular institution), a subject is Danish if they are member of the group of Danish citizens etc. The tautology aside, proof of membership is a very common requirement for things like discount systems, elligibility for certain business transactions etc. Examples include discounts to senior citizens, proof of a valid drivers license before renting a trailer etc. Many of these cases do not require any proof of identity other than the proof of membership and whatever the economic transaction requires.<a href="#section-4.4-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
