@@ -31,6 +31,9 @@ author:
 normative:
 
 informative:
+  eIDAS:
+     target: https://eur-lex.europa.eu/eli/reg/2024/1183/oj/eng
+     title: Regulation (EU) 2024/1183 of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the European Digital Identity Framework
 
 ...
 
@@ -67,21 +70,25 @@ We also rely on the terminilogy from the SPICE architecture document.
 
 Zero Knownledge Proof mechanisms are fundamentally about proving claims about data subjects with no (zero) auxilliary information leakage. However zkp isn't the only method for addressing information leakage in the 3 party architecture. Using [RFC9901], aka selective disclosure json web tokens (SD-JWT) it is possible to achive many but not all common privacy requirements. Specifically it is not possible to prevent information leakage that results from the issuer and verfier colluding.
 
-In situations where collusion resistance is needed and SD-JWTs (and similar solutions) don't work zkp becomes a clear alternative. However even in situations where collusion resistance isn't necessary, zkp is sometimes a convenient alternative to other selective disclosure solutions for operational reasons. For instance, a common way to deploy SD-JWTs is to use so called batch issuance. In order to achive holder-verifier unlinkability, the issuer provides the holder with a set of identical copies (a batch) of a given SD-JWT each signed with a unique key. Whenever the holder generates a presentation to the verifier one of the SD-JWTs is "consumed", making them effectively one-time-use.
+In situations where collusion resistance is needed and SD-JWTs (and similar solutions) don't work zkp becomes a clear alternative. However even in situations where collusion resistance isn't necessary, zkp is sometimes a convenient alternative to other selective disclosure solutions for operational reasons. For instance, a common way to deploy SD-JWTs is to use so called batch issuance. In order to achive verifier-verifier unlinkability, the issuer provides the holder with a set of identical copies (a batch) of a given SD-JWT each signed with a unique key. Whenever the holder generates a presentation to the verifier one of the SD-JWTs is "consumed", making them effectively one-time-use.
 
-There are many situations where this provides adequate privacy protection. However, since the issuer creates N copies and N signatures each time a SD-JWT is issued and since this has to be repeated every time the batch "runs dry" at the holder, the issuer has to perform a large and recurring number of signatures. Depending on how the infrastructure is setup, it may simply be cheaper from an operational point of view to use a zkp mechanism where a single credential can be issued and re-used by the holder for as long as it is valid.
+There are situations where the salted hash approach used in SD-JWTs and mDOCs provides adequate privacy protection. However, in order to achive verifier-verifier unlinkability the issuer creates N copies and N signatures each time a SD-JWT is issued and since this has to be repeated every time the batch "runs dry" at the holder, the issuer has to perform a large and recurring number of signatures. Depending on how the infrastructure is setup, it may simply be cheaper from an operational point of view to use a zkp mechanism where a single credential can be issued and re-used by the holder for as long as it is valid.
 
-## Regulatory requirements
-
-## Business requirements
-
-## Cross-realm trust
+In some jurisdictions, legal requirements are beeing established to ensure enhanced privacy protection for use of online services. Some legal regimes set down requirements that imply that only the minimal set of information required for each transaction must be transmitted. In such sitations it may be useful (but certainly not always required) to consider deploying zero knowledge proof technology. Some legal requirements take this further and outright require zero knowledge proof technology. One such example is the [eIDAS] regulation. However even in the case of eIDAS, the development of zkp schemes has effectively led to a "soft" requirement until development and standaridization efforts have caught up with legal requirements.
 
 # Use cases
 
 ## Proof of age
 
+Proof of age means the ability to proove that a subject is above or below a required age. Commonly cited use case include access to mature or age-limited content (eg related to online gambling). Proof of age is also relevant when the subject needs to proove that he or she is below a certain age-limit, for instance when the subject is accessing an online service intended for, and meant to be a safe space for, children.
+
+A proof of age can be produced using a so called range-proof from a credential that contains an authentic date of birth or an authentic age claim for the subject.
+
 ## Proof of human
+
+Proof of human means the ability to proove that a subject is human. This could be achived by producing a zkp proof from a credential only given to humans. It is often presumed that a passport or similar travel document, or the Personal Identity Document (PID) credentials envisioned by the eIDAS regulation will only be provided to humans but it is by no means certain that all countries and organizations that issue recognized ICAO travel documents would only issue them to persons (humans). ICAO guidelines make no explicit requirement that only humans are allowed to obtain a passport or an emergency travel document but the term "person" indicates that this is the intent.
+
+The reason proof of human may be interesting follows from the increased use of semi-autonomous agents that sometimes acts independently from or by loosely formulated instructions (prompts) from human owners. It is likely going to be useful to distinguish operations done by a human from operations done as the result of a prompt from decisions taken independently from any human interaction. Such acts and operations are sometimes but not always recorded together with identifiable information and the use of zkp allows the trust in the "human:ness" to be seperated from any trust in the agent holding the authorzation for the act itself.
 
 ## Proof of liveness
 
