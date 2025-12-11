@@ -64,7 +64,7 @@ This document aims to describe some real-world use cases where the deployment of
 
 {::boilerplate bcp14-tagged}
 
-We also rely on the terminology from the SPICE architecture document.
+We also rely on the terminology from the SPICE architecture document ({{?I-D.draft-ietf-spice-vdcarch-00}}).
 
 # Why deploy ZKP?
 
