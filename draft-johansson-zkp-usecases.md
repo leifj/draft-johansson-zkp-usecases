@@ -113,5 +113,4 @@ This document has no IANA actions.
 # Acknowledgments
 {:numbered="false"}
 
-Peter Altman
-Drummond Reed
+Thanks to Peter Altman and Drummond Reed for their contributions to this document.
