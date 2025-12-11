@@ -56,7 +56,7 @@ Zero knowledge mechanisms fulfil many privacy requirements, for instance:
 * verifier-verifier unlinkability
 * issuer-verifier unlinkability (a.k.a. collusion-resistant unlinkability)
 
-These properties come at a cost in terms of implementation complexity. Zero knowledge proofs are both different from conventional cryptography and often hard to implement and understand. Additionally, the fact that zkp ensures unlinkability means that some use-cases that depend on linkability may not translate into architectures that rely on zkp. This means that even if zkp is deployed, the information required in the proofs (i.e., the S) may in some cases be enough to fully identify the data subject, in which case the deployment of zkp serves little purpose.
+These properties come at a cost in terms of implementation complexity. Zero knowledge proofs are both different from conventional cryptography and often hard to implement and understand. Additionally, the fact that zkp ensures unlinkability means that some use-cases that depend on linkability may not translate into architectures that rely on zkp without significant adaptation. Merely deploying zkp is not sufficient to ensure that the overall system preserves privacy, as the information required in the proofs (i.e., the S) may in some cases be enough to fully identify the data subject, in which case the deployment of zkp serves little purpose.
 
 This document aims to describe some real-world use cases where the deployment of zkp makes sense from a business and technical perspective.
 
