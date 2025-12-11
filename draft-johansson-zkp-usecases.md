@@ -39,13 +39,13 @@ informative:
 
 --- abstract
 
-Zero Knowledge Proof technology relies on mathematical constructs that enable a sender to proove to a receiver that a piece of information has a certain agreed property without revealing that information or its source to the sender. An example commonly given is the problem of prooving that a subject is older than a certain age without revealing the exact age or any other information to a receiver. This document attempts to catalogue real world usecases for such technology.
+Zero Knowledge Proof technology relies on mathematical constructs that enable a sender to prove to a receiver that a piece of information has a certain agreed property without revealing that information or its source to the sender. An example commonly given is the problem of proving that a subject is older than a certain age without revealing the exact age or any other information to a receiver. This document attempts to catalogue real world usecases for such technology.
 
 --- middle
 
 # Introduction
 
-There are several ways to define the concept of zero knowledge proofs. In this document we will rely on the SPICE architecture document to provide us with the basic terminology and use the following definition: A zero knowledge proof (zkp) is a mechanism by which the holder can proove to the verifier that a statement (S) is true without providing the verifier with any additional information other than the truthfullness of S. A zkp mechanism is usually required to satisfy three properties:
+There are several ways to define the concept of zero knowledge proofs. In this document we will rely on the SPICE architecture document to provide us with the basic terminology and use the following definition: A zero knowledge proof (zkp) is a mechanism by which the holder can prove to the verifier that a statement (S) is true without providing the verifier with any additional information other than the truthfulness of S. A zkp mechanism is usually required to satisfy three properties:
 
 * completeness: if S is true, then a compliant implementation of the mechanism will accept the proof presented by another compliant implementation.
 * soundness: a non-compliant holder can't make a compliant implementation accept that S is true when it is in fact false.
