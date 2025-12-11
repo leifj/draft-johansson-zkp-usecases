@@ -39,13 +39,13 @@ informative:
 
 --- abstract
 
-Zero Knowledge Proof technology relies on mathematical constructs that enable a sender to proove to a receiver that a piece of information has a certain agreed property without revealing that information or its source to the sender. An example commonly given is the problem of prooving that a subject is older than a certain age without revealing the exact age or any other information to a receiver. This document attempts to catalogue real world usecases for such technology.
+Zero Knowledge Proof technology relies on mathematical constructs that enable a sender to prove to a receiver that a piece of information has a certain agreed property without revealing that information or its source to the sender. An example commonly given is the problem of proving that a subject is older than a certain age without revealing the exact age or any other information to a receiver. This document attempts to catalogue real world usecases for such technology.
 
 --- middle
 
 # Introduction
 
-There are several ways to define the concept of zero knowledge proofs. In this document we will rely on the SPICE architecture document to provide us with the basic terminology and use the following definition: A zero knowledge proof (zkp) is a mechanism by which the holder can proove to the verifier that a statement (S) is true without providing the verifier with any additional information other than the truthfullness of S. A zkp mechanism is usually required to satisfy three properties:
+There are several ways to define the concept of zero knowledge proofs. In this document we will rely on the SPICE architecture document to provide us with the basic terminology and use the following definition: A zero knowledge proof (zkp) is a mechanism by which the holder can prove to the verifier that a statement (S) is true without providing the verifier with any additional information other than the truthfulness of S. A zkp mechanism is usually required to satisfy three properties:
 
 * completeness: if S is true then a compliant implementation of the mechanism will accept the proof presented by a another compliant implementation.
 * soundness: a non-compliant holder can't make a compliant implementation accept that S is true when it is in fact false.
@@ -56,15 +56,15 @@ Zero knowledge mechanisms fulfil many privacy requirements for instance:
 * holder-verifier unlinkability
 * issuer-verifier unlinkability (aka collusion-resistant unlinkability)
 
-These properites come at a cost and zero knowledge proofs are both different from conventional cryptography aswell as often hard to implement and understand. Additionally, the fact that zkp ensures unlinkability means that some use-cases that depend on linkability may not translate into architectures that rely on zkp. This means that even if zkp is deployed, the information present in the proofs (ie the statement S) may in some cases be enough to fully identify the data subject in which case the deployment of zkp serves little purpouse.
+These properites come at a cost and zero knowledge proofs are both different from conventional cryptography as well as often hard to implement and understand. Additionally, the fact that zkp ensures unlinkability means that some use-cases that depend on linkability may not translate into architectures that rely on zkp. This means that even if zkp is deployed, the information present in the proofs (ie the statement S) may in some cases be enough to fully identify the data subject in which case the deployment of zkp serves little purpose.
 
-This document aims to describe some real-world usecases where the deployment of zkp makes sens from a business and technical perspective.
+This document aims to describe some real-world usecases where the deployment of zkp makes sense from a business and technical perspective.
 
 # Conventions and Definitions
 
 {::boilerplate bcp14-tagged}
 
-We also rely on the terminilogy from the SPICE architecture document.
+We also rely on the terminology from the SPICE architecture document.
 
 # Why deploy zkp?
 
@@ -80,21 +80,21 @@ In some jurisdictions, legal requirements are beeing established to ensure enhan
 
 ## Proof of age
 
-Proof of age means the ability to proove that a subject is above or below a required age. Commonly cited use case include access to mature or age-limited content (eg related to online gambling). Proof of age is also relevant when the subject needs to proove that he or she is below a certain age-limit, for instance when the subject is accessing an online service intended for, and meant to be a safe space for, children.
+Proof of age means the ability to prove that a subject is above or below a required age. Commonly cited use case include access to mature or age-limited content (eg related to online gambling). Proof of age is also relevant when the subject needs to prove that he or she is below a certain age-limit, for instance when the subject is accessing an online service intended for, and meant to be a safe space for, children.
 
 A proof of age can be produced using a so called range-proof from a credential that contains an authentic date of birth or an authentic age claim for the subject.
 
 ## Proof of human
 
-Proof of human means the ability to proove that a subject is human. This could be achived by producing a zkp proof from a credential only given to humans. It is often presumed that a passport or similar travel document, or the Personal Identity Document (PID) credentials envisioned by the eIDAS regulation will only be provided to humans but it is by no means certain that all countries and organizations that issue recognized ICAO travel documents would only issue them to persons (humans). ICAO guidelines make no explicit requirement that only humans are allowed to obtain a passport or an emergency travel document but the term "person" indicates that this is the intent.
+Proof of human means the ability to prove that a subject is human. This could be achived by producing a zkp proof from a credential only given to humans. It is often presumed that a passport or similar travel document, or the Personal Identity Document (PID) credentials envisioned by the eIDAS regulation will only be provided to humans but it is by no means certain that all countries and organizations that issue recognized ICAO travel documents would only issue them to persons (humans). ICAO guidelines make no explicit requirement that only humans are allowed to obtain a passport or an emergency travel document but the term "person" indicates that this is the intent.
 
-The reason proof of human may be interesting follows from the increased use of semi-autonomous agents that sometimes acts independently from, or on loosely formulated instructions (prompts) from a human. It may be useful to distinguish actions taken by a human from actions taken by an agent as the result of a prompt and also from actions taken independently from any human interaction. Such actions are sometimes, but not always recorded together with identifiable information and the use of zkp allows the trust in the "human:ness" to be seperated from any trust in the agent holding the authorzation for the act itself.
+The reason proof of human may be interesting follows from the increased use of semi-autonomous agents that sometimes acts independently from, or on loosely formulated instructions (prompts) from a human. It may be useful to distinguish actions taken by a human from actions taken by an agent as the result of a prompt and also from actions taken independently from any human interaction. Such actions are sometimes, but not always recorded together with identifiable information and the use of zkp allows the trust in the "human:ness" to be separated from any trust in the agent holding the authorzation for the act itself.
 
 ## Proof of liveness
 
 In the 3 party model a credential is issued to a digital "wallet" under the control of the subject. Cryptographic controls - aka holder binding - is used to ensure that a given credential is issued to one specific wallet. Cryptographic binding cannot however ensure that the subject is the only one able to control the wallet and it is sometimes necessary to know that a particular subject is in direct control of the wallet device. This is sometimes called liveness checks and is commonly used when issuing credentials based on travel documents, drivers licenses and other documents that carry some form of biometric data that can be matched with a subject. Liveness checks are carried out in order to ensure (to some degree) that the subject is physically present instead of (say) having their actions emulated by software.
 
-A liveness credential is a representation of a recent liveness check and the use of zkp enables a verifier to have confidence in that a trusted liveness verification has been done without providing any additional information. It would be possible to combine the liveness check with an identity verification in the holder to be able to proove that the same individual holding an particular form of identity document (say a PID) was recently present and in control of the holder device.
+A liveness credential is a representation of a recent liveness check and the use of zkp enables a verifier to have confidence in that a trusted liveness verification has been done without providing any additional information. It would be possible to combine the liveness check with an identity verification in the holder to be able to prove that the same individual holding an particular form of identity document (say a PID) was recently present and in control of the holder device.
 
 ## Proof of membership
 
