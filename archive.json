@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-12-11T00:14:21.550160+00:00",
+  "timestamp": "2025-12-14T00:15:35.788271+00:00",
   "repo": "leifj/draft-johansson-zkp-usecases",
   "labels": [
     {
@@ -50,5 +50,32 @@
     }
   ],
   "issues": [],
-  "pulls": []
+  "pulls": [
+    {
+      "number": 1,
+      "id": "PR_kwDOQeCkF864aH1E",
+      "title": "Editorial changes",
+      "url": "https://github.com/leifj/draft-johansson-zkp-usecases/pull/1",
+      "state": "OPEN",
+      "author": "divergentdave",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "This includes various editorial improvements from my first read-through of the document. In b5feb1b05d93effd863a7d7ffc6785149a7f12b5 I replaced \"holder-verifier linkability\" with \"verifier-verifier linkability\" as I think the former was an error, and the latter is common terminology. In 2aa7d8ea0a0a184851982e457a0e5031379fe480 I rephrased the end of the introduction to split apart two limitations. I don't think that the first concern about issues with systems that rely on linkability implies the second concern about statements with too much leakage, as both concerns are generally applicable and each stand on their own. I also added a couple informative references, please let me know if I got the right SPICE architecture document.",
+      "createdAt": "2025-12-11T17:45:48Z",
+      "updatedAt": "2025-12-11T17:45:48Z",
+      "baseRepository": "leifj/draft-johansson-zkp-usecases",
+      "baseRefName": "main",
+      "baseRefOid": "abfa42264c79e75f90f9d27f97fef53d72a2ddd5",
+      "headRepository": "divergentdave/draft-johansson-zkp-usecases",
+      "headRefName": "david/editorial",
+      "headRefOid": "3a606a7d105707ec8673651fdf147fb87c83e40f",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
+    }
+  ]
 }
