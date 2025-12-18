@@ -80,9 +80,9 @@ In some jurisdictions, legal requirements are being established to ensure enhanc
 
 ## Proof of age
 
-Proof of age means the ability to proove that a subject is above or below a required age. Commonly cited use case include access to mature or age-limited content (eg related to online gambling). Proof of age is also relevant when the subject needs to proove that he or she is below a certain age-limit, for instance when the subject is accessing an online service intended for, and meant to be a safe space for, children.
+Proof of age means the ability to prove that a subject is above or below a required age. Commonly cited use cases include access to mature or age-limited content (e.g., online gambling). Proof of age is also relevant when the subject needs to prove that he or she is below a certain age limit, for instance, when the subject is accessing an online service intended for, and meant to be a safe space for, children.
 
-A proof of age can be produced using a so called range-proof from a credential that contains an authentic date of birth or an authentic age claim for the subject.
+A proof of age can be produced using a so-called range-proof from a credential that contains an authentic date of birth or an authentic age claim for the subject.
 
 ## Proof of human
 
