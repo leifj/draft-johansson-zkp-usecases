@@ -39,13 +39,13 @@ informative:
 
 --- abstract
 
-Zero Knowledge Proof technology relies on mathematical constructs that enable a sender to proove to a receiver that a piece of information has a certain agreed property without revealing that information or its source to the sender. An example commonly given is the problem of prooving that a subject is older than a certain age without revealing the exact age or any other information to a receiver. This document attempts to catalogue real world usecases for such technology.
+Zero Knowledge Proof technology relies on mathematical constructs that enable a sender to prove to a receiver that a piece of information has a certain agreed property without revealing that information or its source to the sender. An example commonly given is the problem of proving that a subject is older than a certain age without revealing the exact age or any other information to a receiver. This document attempts to catalogue real world usecases for such technology.
 
 --- middle
 
 # Introduction
 
-There are several ways to define the concept of zero knowledge proofs. In this document we will rely on the SPICE architecture document to provide us with the basic terminology and use the following definition: A zero knowledge proof (zkp) is a mechanism by which the holder can proove to the verifier that a statement (S) is true without providing the verifier with any additional information other than the truthfullness of S. A zkp mechanism is usually required to satisfy three properties:
+There are several ways to define the concept of zero knowledge proofs. In this document we will rely on the SPICE architecture document to provide us with the basic terminology and use the following definition: A zero knowledge proof (zkp) is a mechanism by which the holder can prove to the verifier that a statement (S) is true without providing the verifier with any additional information other than the truthfulness of S. A zkp mechanism is usually required to satisfy three properties:
 
 * completeness: if S is true, then a compliant implementation of the mechanism will accept the proof presented by another compliant implementation.
 * soundness: a non-compliant holder can't make a compliant implementation accept that S is true when it is in fact false.
@@ -53,10 +53,10 @@ There are several ways to define the concept of zero knowledge proofs. In this d
 
 Zero knowledge mechanisms fulfil many privacy requirements, for instance:
 
-* holder-verifier unlinkability
-* issuer-verifier unlinkability (aka collusion-resistant unlinkability)
+* verifier-verifier unlinkability
+* issuer-verifier unlinkability (a.k.a. collusion-resistant unlinkability)
 
-These properties come at a cost in terms of implementation complexity. Zero knowledge proofs are both different from conventional cryptography and often hard to implement and understand. Additionally, the fact that zkp ensures unlinkability means that some use-cases that depend on linkability may not translate into architectures that rely on zkp. This means that even if zkp is deployed, the information required in the proofs (i.e., the S) may in some cases be enough to fully identify the data subject, in which case the deployment of zkp serves little purpose.
+These properties come at a cost in terms of implementation complexity. Zero knowledge proofs are both different from conventional cryptography and often hard to implement and understand. Additionally, the fact that zkp ensures unlinkability means that some use-cases that depend on linkability may not translate into architectures that rely on zkp without significant adaptation. Merely deploying zkp is not sufficient to ensure that the overall system preserves privacy, as the information required in the proofs (i.e., the S) may in some cases be enough to fully identify the data subject, in which case the deployment of zkp serves little purpose.
 
 This document aims to describe some real-world use cases where the deployment of zkp makes sense from a business and technical perspective.
 
@@ -64,11 +64,11 @@ This document aims to describe some real-world use cases where the deployment of
 
 {::boilerplate bcp14-tagged}
 
-We also rely on the terminology from the SPICE architecture document.
+We also rely on the terminology from the SPICE architecture document ({{?I-D.draft-ietf-spice-vdcarch-00}}).
 
 # Why deploy ZKP?
 
-ZKP mechanisms are fundamentally about proving claims about data subjects with no (zero) auxiliary information leakage. However, ZKP isn't the only method for addressing information leakage in the three-party architecture. Using [RFC9901], also known as selective disclosure JSON Web Tokens (SD-JWT), it is possible to achieve many, but not all, common privacy requirements. Specifically, it is not possible to prevent information leakage that results from collusion between the issuer and verifier.
+ZKP mechanisms are fundamentally about proving claims about data subjects with no (zero) auxiliary information leakage. However, ZKP isn't the only method for addressing information leakage in the three-party architecture. Using {{?RFC9901}}, also known as selective disclosure JSON Web Tokens (SD-JWT), it is possible to achieve many, but not all, common privacy requirements. Specifically, it is not possible to prevent information leakage that results from collusion between the issuer and verifier.
 
 In situations where collusion resistance is required and SD-JWTs (and similar solutions) are ineffective, ZKP becomes a clear alternative. However, even in situations where collusion resistance isn't necessary, ZKP is sometimes a convenient alternative to other selective disclosure solutions for operational reasons. For instance, a common way to deploy SD-JWTs is to use so-called batch issuance. In order to achieve verifier-verifier unlinkability, the issuer provides the holder with a set of identical copies (a batch) of a given SD-JWT, each signed with a unique key. Whenever the holder generates a presentation to the verifier, one of the SD-JWTs is "consumed", making them effectively one-time-use.
 
@@ -113,5 +113,4 @@ This document has no IANA actions.
 # Acknowledgments
 {:numbered="false"}
 
-Peter Altman
-Drummond Reed
+Thanks to Peter Altman and Drummond Reed for their contributions to this document.
