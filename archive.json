@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-12-18T00:12:10.364669+00:00",
+  "timestamp": "2025-12-21T00:15:23.192239+00:00",
   "repo": "leifj/draft-johansson-zkp-usecases",
   "labels": [
     {
@@ -63,17 +63,60 @@
       "labels": [],
       "body": "This includes various editorial improvements from my first read-through of the document. In b5feb1b05d93effd863a7d7ffc6785149a7f12b5 I replaced \"holder-verifier linkability\" with \"verifier-verifier linkability\" as I think the former was an error, and the latter is common terminology. In 2aa7d8ea0a0a184851982e457a0e5031379fe480 I rephrased the end of the introduction to split apart two limitations. I don't think that the first concern about issues with systems that rely on linkability implies the second concern about statements with too much leakage, as both concerns are generally applicable and each stand on their own. I also added a couple informative references, please let me know if I got the right SPICE architecture document.",
       "createdAt": "2025-12-11T17:45:48Z",
-      "updatedAt": "2025-12-11T17:45:48Z",
+      "updatedAt": "2025-12-19T15:56:33Z",
       "baseRepository": "leifj/draft-johansson-zkp-usecases",
       "baseRefName": "main",
-      "baseRefOid": "abfa42264c79e75f90f9d27f97fef53d72a2ddd5",
+      "baseRefOid": "22ca96c602498c995be3c4be4a9c60526f66ebbf",
       "headRepository": "divergentdave/draft-johansson-zkp-usecases",
       "headRefName": "david/editorial",
-      "headRefOid": "3a606a7d105707ec8673651fdf147fb87c83e40f",
+      "headRefOid": "d48812e25c0c8d56cf67a8193a22678c0e474afa",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
       "mergeCommit": null,
+      "comments": [
+        {
+          "author": "leifj",
+          "authorAssociation": "OWNER",
+          "body": "hey - can you rebase against the new main?",
+          "createdAt": "2025-12-19T12:59:30Z",
+          "updatedAt": "2025-12-19T12:59:30Z"
+        },
+        {
+          "author": "divergentdave",
+          "authorAssociation": "NONE",
+          "body": "OK, this is rebased",
+          "createdAt": "2025-12-19T15:56:33Z",
+          "updatedAt": "2025-12-19T15:56:33Z"
+        }
+      ],
+      "reviews": []
+    },
+    {
+      "number": 2,
+      "id": "PR_kwDOQeCkF865qP16",
+      "title": "Proposed clarifications to intro",
+      "url": "https://github.com/leifj/draft-johansson-zkp-usecases/pull/2",
+      "state": "MERGED",
+      "author": "hlflanagan",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Some suggestions to clarify the language and fix some basic grammar mistakes. ",
+      "createdAt": "2025-12-18T18:49:23Z",
+      "updatedAt": "2025-12-19T12:58:59Z",
+      "baseRepository": "leifj/draft-johansson-zkp-usecases",
+      "baseRefName": "main",
+      "baseRefOid": "abfa42264c79e75f90f9d27f97fef53d72a2ddd5",
+      "headRepository": "hlflanagan/draft-johansson-zkp-usecases",
+      "headRefName": "clarifications",
+      "headRefOid": "f8ea65a345418708398c1c17b378a34cb92e50fc",
+      "closedAt": "2025-12-19T12:58:59Z",
+      "mergedAt": "2025-12-19T12:58:59Z",
+      "mergedBy": "leifj",
+      "mergeCommit": {
+        "oid": "22ca96c602498c995be3c4be4a9c60526f66ebbf"
+      },
       "comments": [],
       "reviews": []
     }
