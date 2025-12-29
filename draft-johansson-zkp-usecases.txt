@@ -4,8 +4,8 @@
 
 Network Working Group                                       L. Johansson
 Internet-Draft                                          SIROS Foundation
-Intended status: Informational                          19 December 2025
-Expires: 22 June 2026
+Intended status: Informational                          29 December 2025
+Expires: 2 July 2026
 
 
                   Use cases for Zero Knowledge Proofs
@@ -14,10 +14,10 @@ Expires: 22 June 2026
 Abstract
 
    Zero Knowledge Proof technology relies on mathematical constructs
-   that enable a sender to proove to a receiver that a piece of
+   that enable a sender to prove to a receiver that a piece of
    information has a certain agreed property without revealing that
    information or its source to the sender.  An example commonly given
-   is the problem of prooving that a subject is older than a certain age
+   is the problem of proving that a subject is older than a certain age
    without revealing the exact age or any other information to a
    receiver.  This document attempts to catalogue real world usecases
    for such technology.
@@ -49,7 +49,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 22 June 2026.
+   This Internet-Draft will expire on 2 July 2026.
 
 Copyright Notice
 
@@ -89,9 +89,9 @@ Table of Contents
    proofs.  In this document we will rely on the SPICE architecture
    document to provide us with the basic terminology and use the
    following definition: A zero knowledge proof (zkp) is a mechanism by
-   which the holder can proove to the verifier that a statement (S) is
+   which the holder can prove to the verifier that a statement (S) is
    true without providing the verifier with any additional information
-   other than the truthfullness of S.  A zkp mechanism is usually
+   other than the truthfulness of S.  A zkp mechanism is usually
    required to satisfy three properties:
 
    *  completeness: if S is true, then a compliant implementation of the
@@ -108,9 +108,9 @@ Table of Contents
    Zero knowledge mechanisms fulfil many privacy requirements, for
    instance:
 
-   *  holder-verifier unlinkability
+   *  verifier-verifier unlinkability
 
-   *  issuer-verifier unlinkability (aka collusion-resistant
+   *  issuer-verifier unlinkability (a.k.a. collusion-resistant
       unlinkability)
 
    These properties come at a cost in terms of implementation
@@ -118,10 +118,11 @@ Table of Contents
    conventional cryptography and often hard to implement and understand.
    Additionally, the fact that zkp ensures unlinkability means that some
    use-cases that depend on linkability may not translate into
-   architectures that rely on zkp.  This means that even if zkp is
-   deployed, the information required in the proofs (i.e., the S) may in
-   some cases be enough to fully identify the data subject, in which
-   case the deployment of zkp serves little purpose.
+   architectures that rely on zkp without significant adaptation.
+   Merely deploying zkp is not sufficient to ensure that the overall
+   system preserves privacy, as the information required in the proofs
+   (i.e., the S) may in some cases be enough to fully identify the data
+   subject, in which case the deployment of zkp serves little purpose.
 
    This document aims to describe some real-world use cases where the
    deployment of zkp makes sense from a business and technical
@@ -135,7 +136,8 @@ Table of Contents
    BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all
    capitals, as shown here.
 
-   We also rely on the terminology from the SPICE architecture document.
+   We also rely on the terminology from the SPICE architecture document
+   ([I-D.draft-ietf-spice-vdcarch-00]).
 
 3.  Why deploy ZKP?
 
@@ -292,9 +294,23 @@ Table of Contents
               Identity Framework", n.d.,
               <https://eur-lex.europa.eu/eli/reg/2024/1183/oj/eng>.
 
+   [I-D.draft-ietf-spice-vdcarch-00]
+              Johansson, L., Zundel, B., and T. Cappalli, "A reference
+              architecture for direct presentation credential flows",
+              Work in Progress, Internet-Draft, draft-ietf-spice-
+              vdcarch-00, 4 November 2025,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-spice-
+              vdcarch-00>.
+
+   [RFC9901]  Fett, D., Yasuda, K., and B. Campbell, "Selective
+              Disclosure for JSON Web Tokens", RFC 9901,
+              DOI 10.17487/RFC9901, November 2025,
+              <https://www.rfc-editor.org/rfc/rfc9901>.
+
 Acknowledgments
 
-   Peter Altman Drummond Reed
+   Thanks to Peter Altman and Drummond Reed for their contributions to
+   this document.
 
 Author's Address
 

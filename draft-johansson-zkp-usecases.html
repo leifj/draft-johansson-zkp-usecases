@@ -7,7 +7,7 @@
 <title>Use cases for Zero Knowledge Proofs</title>
 <meta content="Leif Johansson" name="author">
 <meta content="
-       Zero Knowledge Proof technology relies on mathematical constructs that enable a sender to proove to a receiver that a piece of information has a certain agreed property without revealing that information or its source to the sender. An example commonly given is the problem of prooving that a subject is older than a certain age without revealing the exact age or any other information to a receiver. This document attempts to catalogue real world usecases for such technology. 
+       Zero Knowledge Proof technology relies on mathematical constructs that enable a sender to prove to a receiver that a piece of information has a certain agreed property without revealing that information or its source to the sender. An example commonly given is the problem of proving that a subject is older than a certain age without revealing the exact age or any other information to a receiver. This document attempts to catalogue real world usecases for such technology. 
     " name="description">
 <meta content="xml2rfc 3.31.0" name="generator">
 <meta content="zero knowledge proof" name="keyword">
@@ -1048,7 +1048,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Johansson</td>
-<td class="center">Expires 22 June 2026</td>
+<td class="center">Expires 2 July 2026</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1061,12 +1061,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <dd class="internet-draft">draft-johansson-zkp-usecases-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2025-12-19" class="published">19 December 2025</time>
+<time datetime="2025-12-29" class="published">29 December 2025</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2026-06-22">22 June 2026</time></dd>
+<dd class="expires"><time datetime="2026-07-02">2 July 2026</time></dd>
 <dt class="label-authors">Author:</dt>
 <dd class="authors">
 <div class="author">
@@ -1079,7 +1079,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <h1 id="title">Use cases for Zero Knowledge Proofs</h1>
 <section id="section-abstract">
       <h2 id="abstract"><a href="#abstract" class="selfRef">Abstract</a></h2>
-<p id="section-abstract-1">Zero Knowledge Proof technology relies on mathematical constructs that enable a sender to proove to a receiver that a piece of information has a certain agreed property without revealing that information or its source to the sender. An example commonly given is the problem of prooving that a subject is older than a certain age without revealing the exact age or any other information to a receiver. This document attempts to catalogue real world usecases for such technology.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
+<p id="section-abstract-1">Zero Knowledge Proof technology relies on mathematical constructs that enable a sender to prove to a receiver that a piece of information has a certain agreed property without revealing that information or its source to the sender. An example commonly given is the problem of proving that a subject is older than a certain age without revealing the exact age or any other information to a receiver. This document attempts to catalogue real world usecases for such technology.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
 </section>
 <section class="note rfcEditorRemove" id="section-note.1">
       <h2 id="name-about-this-document">
@@ -1111,7 +1111,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 22 June 2026.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 2 July 2026.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1198,7 +1198,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
       <h2 id="name-introduction">
 <a href="#section-1" class="section-number selfRef">1. </a><a href="#name-introduction" class="section-name selfRef">Introduction</a>
       </h2>
-<p id="section-1-1">There are several ways to define the concept of zero knowledge proofs. In this document we will rely on the SPICE architecture document to provide us with the basic terminology and use the following definition: A zero knowledge proof (zkp) is a mechanism by which the holder can proove to the verifier that a statement (S) is true without providing the verifier with any additional information other than the truthfullness of S. A zkp mechanism is usually required to satisfy three properties:<a href="#section-1-1" class="pilcrow">¶</a></p>
+<p id="section-1-1">There are several ways to define the concept of zero knowledge proofs. In this document we will rely on the SPICE architecture document to provide us with the basic terminology and use the following definition: A zero knowledge proof (zkp) is a mechanism by which the holder can prove to the verifier that a statement (S) is true without providing the verifier with any additional information other than the truthfulness of S. A zkp mechanism is usually required to satisfy three properties:<a href="#section-1-1" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-1-2.1">
           <p id="section-1-2.1.1">completeness: if S is true, then a compliant implementation of the mechanism will accept the proof presented by another compliant implementation.<a href="#section-1-2.1.1" class="pilcrow">¶</a></p>
@@ -1213,13 +1213,13 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <p id="section-1-3">Zero knowledge mechanisms fulfil many privacy requirements, for instance:<a href="#section-1-3" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-1-4.1">
-          <p id="section-1-4.1.1">holder-verifier unlinkability<a href="#section-1-4.1.1" class="pilcrow">¶</a></p>
+          <p id="section-1-4.1.1">verifier-verifier unlinkability<a href="#section-1-4.1.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="section-1-4.2">
-          <p id="section-1-4.2.1">issuer-verifier unlinkability (aka collusion-resistant unlinkability)<a href="#section-1-4.2.1" class="pilcrow">¶</a></p>
+          <p id="section-1-4.2.1">issuer-verifier unlinkability (a.k.a. collusion-resistant unlinkability)<a href="#section-1-4.2.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
-<p id="section-1-5">These properties come at a cost in terms of implementation complexity. Zero knowledge proofs are both different from conventional cryptography and often hard to implement and understand. Additionally, the fact that zkp ensures unlinkability means that some use-cases that depend on linkability may not translate into architectures that rely on zkp. This means that even if zkp is deployed, the information required in the proofs (i.e., the S) may in some cases be enough to fully identify the data subject, in which case the deployment of zkp serves little purpose.<a href="#section-1-5" class="pilcrow">¶</a></p>
+<p id="section-1-5">These properties come at a cost in terms of implementation complexity. Zero knowledge proofs are both different from conventional cryptography and often hard to implement and understand. Additionally, the fact that zkp ensures unlinkability means that some use-cases that depend on linkability may not translate into architectures that rely on zkp without significant adaptation. Merely deploying zkp is not sufficient to ensure that the overall system preserves privacy, as the information required in the proofs (i.e., the S) may in some cases be enough to fully identify the data subject, in which case the deployment of zkp serves little purpose.<a href="#section-1-5" class="pilcrow">¶</a></p>
 <p id="section-1-6">This document aims to describe some real-world use cases where the deployment of zkp makes sense from a business and technical perspective.<a href="#section-1-6" class="pilcrow">¶</a></p>
 </section>
 </div>
@@ -1232,7 +1232,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 "<span class="bcp14">MAY</span>", and "<span class="bcp14">OPTIONAL</span>" in this document are to be interpreted as
 described in BCP 14 <span>[<a href="#RFC2119" class="cite xref">RFC2119</a>]</span> <span>[<a href="#RFC8174" class="cite xref">RFC8174</a>]</span> when, and only when, they
 appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶</a></p>
-<p id="section-2-2">We also rely on the terminology from the SPICE architecture document.<a href="#section-2-2" class="pilcrow">¶</a></p>
+<p id="section-2-2">We also rely on the terminology from the SPICE architecture document (<span>[<a href="#I-D.draft-ietf-spice-vdcarch-00" class="cite xref">I-D.draft-ietf-spice-vdcarch-00</a>]</span>).<a href="#section-2-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="why-deploy-zkp">
@@ -1240,7 +1240,7 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
       <h2 id="name-why-deploy-zkp">
 <a href="#section-3" class="section-number selfRef">3. </a><a href="#name-why-deploy-zkp" class="section-name selfRef">Why deploy ZKP?</a>
       </h2>
-<p id="section-3-1">ZKP mechanisms are fundamentally about proving claims about data subjects with no (zero) auxiliary information leakage. However, ZKP isn't the only method for addressing information leakage in the three-party architecture. Using [RFC9901], also known as selective disclosure JSON Web Tokens (SD-JWT), it is possible to achieve many, but not all, common privacy requirements. Specifically, it is not possible to prevent information leakage that results from collusion between the issuer and verifier.<a href="#section-3-1" class="pilcrow">¶</a></p>
+<p id="section-3-1">ZKP mechanisms are fundamentally about proving claims about data subjects with no (zero) auxiliary information leakage. However, ZKP isn't the only method for addressing information leakage in the three-party architecture. Using <span>[<a href="#RFC9901" class="cite xref">RFC9901</a>]</span>, also known as selective disclosure JSON Web Tokens (SD-JWT), it is possible to achieve many, but not all, common privacy requirements. Specifically, it is not possible to prevent information leakage that results from collusion between the issuer and verifier.<a href="#section-3-1" class="pilcrow">¶</a></p>
 <p id="section-3-2">In situations where collusion resistance is required and SD-JWTs (and similar solutions) are ineffective, ZKP becomes a clear alternative. However, even in situations where collusion resistance isn't necessary, ZKP is sometimes a convenient alternative to other selective disclosure solutions for operational reasons. For instance, a common way to deploy SD-JWTs is to use so-called batch issuance. In order to achieve verifier-verifier unlinkability, the issuer provides the holder with a set of identical copies (a batch) of a given SD-JWT, each signed with a unique key. Whenever the holder generates a presentation to the verifier, one of the SD-JWTs is "consumed", making them effectively one-time-use.<a href="#section-3-2" class="pilcrow">¶</a></p>
 <p id="section-3-3">There are situations where the salted hash approach used in SD-JWTs and mdocs [TK:add ISO reference] provides adequate privacy protection. However, in order to achieve verifier-verifier unlinkability, the issuer creates N copies and N signatures each time an SD-JWT is issued. Since this has to be repeated every time the batch "runs dry" at the holder, the issuer has to perform a large and recurring number of signatures. Depending on how the infrastructure is set up, it may be cheaper from an operational point of view to use a ZKP mechanism, where a single credential can be issued and reused by the holder for as long as it remains valid.<a href="#section-3-3" class="pilcrow">¶</a></p>
 <p id="section-3-4">In some jurisdictions, legal requirements are being established to ensure enhanced privacy protection for the use of online services. Some legal regimes establish requirements that imply that only the minimal set of information required for each transaction must be transmitted. In such situations, it may be useful (but certainly not always required) to consider deploying ZKP technology. Some legal requirements take this further and outright require ZKP technology. One such example is the <span>[<a href="#eIDAS" class="cite xref">eIDAS</a>]</span> regulation. However, even in the case of eIDAS, the development of zkp schemes has effectively led to a "soft" requirement until development and standardization efforts have caught up with legal requirements.<a href="#section-3-4" class="pilcrow">¶</a></p>
@@ -1333,8 +1333,16 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
         </h3>
 <dl class="references">
 <dt id="eIDAS">[eIDAS]</dt>
-      <dd>
+        <dd>
 <span class="refTitle">"Regulation (EU) 2024/1183 of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the European Digital Identity Framework"</span>, <span>n.d.</span>, <span>&lt;<a href="https://eur-lex.europa.eu/eli/reg/2024/1183/oj/eng">https://eur-lex.europa.eu/eli/reg/2024/1183/oj/eng</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="I-D.draft-ietf-spice-vdcarch-00">[I-D.draft-ietf-spice-vdcarch-00]</dt>
+        <dd>
+<span class="refAuthor">Johansson, L.</span>, <span class="refAuthor">Zundel, B.</span>, and <span class="refAuthor">T. Cappalli</span>, <span class="refTitle">"A reference architecture for direct presentation credential flows"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-spice-vdcarch-00</span>, <time datetime="2025-11-04" class="refDate">4 November 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-spice-vdcarch-00">https://datatracker.ietf.org/doc/html/draft-ietf-spice-vdcarch-00</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC9901">[RFC9901]</dt>
+      <dd>
+<span class="refAuthor">Fett, D.</span>, <span class="refAuthor">Yasuda, K.</span>, and <span class="refAuthor">B. Campbell</span>, <span class="refTitle">"Selective Disclosure for JSON Web Tokens"</span>, <span class="seriesInfo">RFC 9901</span>, <span class="seriesInfo">DOI 10.17487/RFC9901</span>, <time datetime="2025-11" class="refDate">November 2025</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9901">https://www.rfc-editor.org/rfc/rfc9901</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 </dl>
 </section>
@@ -1346,8 +1354,7 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
       <h2 id="name-acknowledgments">
 <a href="#name-acknowledgments" class="section-name selfRef">Acknowledgments</a>
       </h2>
-<p id="appendix-A-1">Peter Altman
-Drummond Reed<a href="#appendix-A-1" class="pilcrow">¶</a></p>
+<p id="appendix-A-1">Thanks to Peter Altman and Drummond Reed for their contributions to this document.<a href="#appendix-A-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="authors-addresses">
