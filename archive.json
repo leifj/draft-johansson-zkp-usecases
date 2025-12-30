@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-12-28T00:15:59.057149+00:00",
+  "timestamp": "2025-12-30T00:14:21.509468+00:00",
   "repo": "leifj/draft-johansson-zkp-usecases",
   "labels": [
     {
@@ -56,24 +56,26 @@
       "id": "PR_kwDOQeCkF864aH1E",
       "title": "Editorial changes",
       "url": "https://github.com/leifj/draft-johansson-zkp-usecases/pull/1",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "divergentdave",
-      "authorAssociation": "NONE",
+      "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
       "labels": [],
       "body": "This includes various editorial improvements from my first read-through of the document. In b5feb1b05d93effd863a7d7ffc6785149a7f12b5 I replaced \"holder-verifier linkability\" with \"verifier-verifier linkability\" as I think the former was an error, and the latter is common terminology. In 2aa7d8ea0a0a184851982e457a0e5031379fe480 I rephrased the end of the introduction to split apart two limitations. I don't think that the first concern about issues with systems that rely on linkability implies the second concern about statements with too much leakage, as both concerns are generally applicable and each stand on their own. I also added a couple informative references, please let me know if I got the right SPICE architecture document.",
       "createdAt": "2025-12-11T17:45:48Z",
-      "updatedAt": "2025-12-22T17:53:40Z",
+      "updatedAt": "2025-12-29T09:56:47Z",
       "baseRepository": "leifj/draft-johansson-zkp-usecases",
       "baseRefName": "main",
       "baseRefOid": "22ca96c602498c995be3c4be4a9c60526f66ebbf",
       "headRepository": "divergentdave/draft-johansson-zkp-usecases",
       "headRefName": "david/editorial",
       "headRefOid": "d48812e25c0c8d56cf67a8193a22678c0e474afa",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2025-12-29T09:56:47Z",
+      "mergedAt": "2025-12-29T09:56:46Z",
+      "mergedBy": "leifj",
+      "mergeCommit": {
+        "oid": "2adb2688ab5d2f3a027d62b49e5d0fdd9ec79ce0"
+      },
       "comments": [
         {
           "author": "leifj",
@@ -84,7 +86,7 @@
         },
         {
           "author": "divergentdave",
-          "authorAssociation": "NONE",
+          "authorAssociation": "CONTRIBUTOR",
           "body": "OK, this is rebased",
           "createdAt": "2025-12-19T15:56:33Z",
           "updatedAt": "2025-12-19T15:56:33Z"
